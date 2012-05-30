@@ -5,6 +5,7 @@ require "gempath/version"
 Gem::Specification.new do |s|
   s.name        = "gempath"
   s.version     = Gempath::VERSION
+  s.platform    = Gem::Platform::RUBY
   s.authors     = ["Micah Koga"]
   s.email       = ["m@mkoga.com"]
   s.homepage    = "http://github.com/mkoga/gempath"
@@ -19,6 +20,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_development_dependency "rake"
+  # s.add_development_dependency "rake"
   # s.add_runtime_dependency "rest-client"
 end
