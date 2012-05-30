@@ -32,6 +32,9 @@ begin
 rescue Gempath::NoTargetSpecifiedError
   puts "error: no target specified"
 
+rescue NoMethodError
+  puts "error: NoMethodError. try upgrading rubygems `gem update --system`"
+
 rescue
   puts "error: bad argument"
 end
