@@ -2,8 +2,8 @@
 
 VERSION = "0.1.0"
 
-require "rubygems"
 require "optparse"
+require "gempath"
 
 options  = {}
 optparse = OptionParser.new do |opts|
@@ -26,10 +26,15 @@ end
 
 begin
   optparse.parse!
+  Gempath.find(ARGV[0], options)
+  exit 0
+
+rescue Gempath::NoTargetSpecifiedError
+  puts "error: no target specified"
+
 rescue
   puts "error: bad argument"
-  puts optparse
-  exit 1
 end
 
-Gempath.path(ARGV[0], options)
+puts optparse
+exit 1

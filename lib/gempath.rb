@@ -2,11 +2,10 @@ require "gempath/version"
 
 module Gempath
 
-  def path(target, options = {})
-    unless target
-      puts optparse
-      exit 1 
-    end
+  class NoTargetSpecifiedError < StandardError; end
+
+  def self.find(target, options = {})
+    raise NoTargetSpecifiedError unless target
 
     begin
       args = [ target ]
