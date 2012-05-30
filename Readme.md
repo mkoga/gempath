@@ -18,6 +18,11 @@ gem list -d GEMNAME
 
 That takes too long. Hence, gempath.
 
+## Install
+```bash
+$ gem install gempath
+```
+
 ## Usage
 
 The most basic scenario:
